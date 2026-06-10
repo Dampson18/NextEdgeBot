@@ -1,0 +1,20 @@
+{
+  "users": {
+    "1134002054": {
+      "first_name": "NextEdge Tech Studio",
+      "last_name": null,
+      "username": "NextEdge2025",
+      "language_code": "en",
+      "is_premium": null,
+      "joined_date": "2026-06-10T15:45:44.200841",
+      "messages_count": 3,
+      "commands_used": 0
+    }
+  },
+  "feedback": [],
+  "stats": {
+    "total_messages": 5,
+    "total_commands": 6,
+    "start_date": "2026-06-10T15:42:26.308048"
+  }
+}

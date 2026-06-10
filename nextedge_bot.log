@@ -1,0 +1,553 @@
+2026-06-10 15:42:30,456 - __main__ - INFO - Google GenAI client initialized successfully
+2026-06-10 15:42:36,360 - __main__ - INFO - NextEdge Tech Studio Bot is starting...
+2026-06-10 15:42:37,785 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getMe "HTTP/1.1 200 OK"
+2026-06-10 15:42:38,037 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-10 15:42:38,042 - telegram.ext.Application - INFO - Application started
+2026-06-10 15:42:48,681 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:42:58,886 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:09,116 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:19,347 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:29,541 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:40,236 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:50,480 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:55,860 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:43:56,880 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendChatAction "HTTP/1.1 200 OK"
+2026-06-10 15:43:56,883 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-10 15:43:58,519 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-10 15:43:58,526 - __main__ - ERROR - Error in gemini_response: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\kelvi\Desktop\Coding Projects\NextEdgeBot\NextEdgeBot\my_bot.py", line 501, in gemini_response
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",  # Using a stable model
+        contents=system_prompt
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 6480, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 4916, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1611, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1404, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1381, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-06-10 15:43:58,877 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:44:06,198 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:44:13,226 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:44:14,186 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendChatAction "HTTP/1.1 200 OK"
+2026-06-10 15:44:14,188 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-10 15:44:15,414 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-10 15:44:15,417 - __main__ - ERROR - Error in gemini_response: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\kelvi\Desktop\Coding Projects\NextEdgeBot\NextEdgeBot\my_bot.py", line 501, in gemini_response
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",  # Using a stable model
+        contents=system_prompt
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 6480, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 4916, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1611, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1404, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1381, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-06-10 15:44:15,776 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:44:23,552 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:44:33,760 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:44:44,149 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:44:54,944 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:45:05,283 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:45:15,488 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:45:25,981 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:45:36,972 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:45:44,130 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:45:46,104 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:45:46,199 - __main__ - INFO - User NextEdge Tech Studio (1134002054) started the bot
+2026-06-10 15:45:54,799 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:03,185 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:09,069 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:46:09,694 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:46:12,662 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:13,220 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:46:13,841 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:46:14,455 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:46:19,586 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:21,412 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:46:21,929 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:46:30,645 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:35,560 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:41,259 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:46:41,892 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:46:45,492 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:46,215 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:46:56,386 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:46:57,519 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:47:04,112 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendChatAction "HTTP/1.1 200 OK"
+2026-06-10 15:47:04,991 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-10 15:47:09,553 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-10 15:47:10,149 - __main__ - ERROR - Error in gemini_response: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\kelvi\Desktop\Coding Projects\NextEdgeBot\NextEdgeBot\my_bot.py", line 501, in gemini_response
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",  # Using a stable model
+        contents=system_prompt
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 6480, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 4916, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1611, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1404, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1381, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-06-10 15:47:10,923 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:47:12,205 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:47:12,567 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:47:12,576 - __main__ - INFO - User NextEdge Tech Studio (1134002054) started the bot
+2026-06-10 15:47:21,537 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:47:29,666 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:47:30,701 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:47:31,063 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:47:34,336 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:47:35,774 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:47:45,601 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:47:55,876 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:48:06,070 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:48:16,424 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:48:26,701 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:48:37,006 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:48:47,450 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:48:57,936 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:49:08,237 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:49:18,586 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:49:28,921 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:49:39,264 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:49:49,543 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:49:59,829 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:50:10,171 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:50:20,419 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:50:30,709 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:50:40,945 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:50:51,250 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:51:01,493 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:51:11,767 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:51:22,010 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:51:32,415 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:51:42,756 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:51:52,980 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:03,236 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:13,481 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:23,755 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:34,161 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:37,338 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:38,782 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:52:38,795 - __main__ - INFO - User NextEdge Tech Studio (1134002054) started the bot
+2026-06-10 15:52:47,883 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:56,283 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:52:57,286 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:52:57,649 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:53:01,588 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:53:01,905 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:53:02,318 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:53:02,769 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 15:53:11,887 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:53:22,681 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:53:33,040 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:53:43,382 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:53:53,728 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:54:04,056 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:54:14,409 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:54:24,752 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:54:35,078 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:54:45,422 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:54:55,727 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:55:06,121 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:55:16,446 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:55:26,743 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:55:36,986 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:55:47,324 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:55:57,578 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:56:07,814 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:56:18,090 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:56:28,489 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:56:38,792 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:56:49,118 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:56:59,977 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:57:10,316 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:57:20,612 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:57:26,959 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:57:29,975 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:57:30,338 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:57:32,445 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:57:33,292 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 15:57:37,961 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 15:57:43,547 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:57:53,801 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:04,073 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:14,312 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:24,552 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:34,760 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:45,031 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:57,069 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:58:57,079 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-06-10 15:58:57,084 - telegram.ext.Application - INFO - Application.stop() complete
+2026-06-10 15:59:15,098 - __main__ - INFO - Google GenAI client initialized successfully
+2026-06-10 15:59:17,432 - __main__ - INFO - NextEdge Tech Studio Bot is starting...
+2026-06-10 15:59:18,688 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getMe "HTTP/1.1 200 OK"
+2026-06-10 15:59:18,984 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-10 15:59:18,990 - telegram.ext.Application - INFO - Application started
+2026-06-10 15:59:31,115 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:59:41,456 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:59:51,806 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 15:59:59,637 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:00:00,761 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:00:00,763 - __main__ - INFO - User NextEdge Tech Studio (1134002054) started the bot
+2026-06-10 16:00:09,935 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:03:01,461 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:02,481 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:04,005 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:06,343 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:09,741 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:14,874 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:22,503 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:34,461 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:03:51,572 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:04:17,223 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:04:47,236 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:05:17,243 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:05:47,272 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:06:17,300 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:06:47,350 - __main__ - ERROR - Update None caused error httpx.ConnectError: [Errno 11001] getaddrinfo failed
+2026-06-10 16:07:29,540 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:07:40,842 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:07:53,443 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:08:04,240 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:08:14,860 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:08:25,949 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:08:36,591 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:08:47,038 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:08:57,481 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:09:08,084 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:09:18,414 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:09:28,824 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:09:39,331 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:09:49,763 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:10:00,460 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:10:10,909 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:10:21,273 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:10:31,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:10:41,884 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:10:52,269 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:11:02,646 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:11:12,975 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:11:23,298 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:11:33,660 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:11:44,093 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:11:54,427 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:12:04,877 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:12:15,270 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:12:25,647 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:12:36,364 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:12:46,911 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:12:57,406 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:13:07,808 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:13:18,189 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:13:28,587 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:13:39,164 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:13:39,496 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:13:39,511 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-06-10 16:13:39,550 - telegram.ext.Application - INFO - Application.stop() complete
+2026-06-10 16:14:06,263 - __main__ - INFO - Google GenAI client initialized successfully
+2026-06-10 16:14:09,509 - __main__ - INFO - NextEdge Tech Studio Bot is starting...
+2026-06-10 16:14:11,904 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getMe "HTTP/1.1 200 OK"
+2026-06-10 16:14:12,311 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/deleteWebhook "HTTP/1.1 200 OK"
+2026-06-10 16:14:12,314 - telegram.ext.Application - INFO - Application started
+2026-06-10 16:14:14,053 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:14:14,873 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:14:14,876 - __main__ - INFO - User NextEdge Tech Studio (1134002054) started the bot
+2026-06-10 16:14:24,614 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:14:35,250 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:14:45,654 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:14:48,253 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:14:58,645 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:15:08,880 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:15:19,225 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:15:24,515 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:15:27,829 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:15:35,256 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:15:41,651 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:16:01,106 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:11,910 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:14,681 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:15,506 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 16:16:15,953 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 16:16:24,968 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:26,603 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:28,249 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendChatAction "HTTP/1.1 200 OK"
+2026-06-10 16:16:28,366 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-10 16:16:30,655 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-10 16:16:30,709 - __main__ - ERROR - Error in gemini_response: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\kelvi\Desktop\Coding Projects\NextEdgeBot\NextEdgeBot\my_bot.py", line 776, in gemini_response
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",
+        contents=system_prompt
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 6480, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 4916, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1611, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1404, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1381, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-06-10 16:16:31,211 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:16:37,255 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:39,099 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 16:16:39,526 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 16:16:46,115 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:47,652 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:16:49,745 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:16:50,825 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:16:50,832 - __main__ - INFO - User NextEdge Tech Studio started NextEdge Chat
+2026-06-10 16:16:58,047 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:01,623 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/answerCallbackQuery "HTTP/1.1 200 OK"
+2026-06-10 16:17:01,912 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/editMessageText "HTTP/1.1 200 OK"
+2026-06-10 16:17:06,698 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:07,257 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendChatAction "HTTP/1.1 200 OK"
+2026-06-10 16:17:07,261 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-06-10 16:17:10,330 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-06-10 16:17:10,917 - __main__ - ERROR - Error in gemini_response: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "C:\Users\kelvi\Desktop\Coding Projects\NextEdgeBot\NextEdgeBot\my_bot.py", line 776, in gemini_response
+    response = client.models.generate_content(
+        model="gemini-2.0-flash-exp",
+        contents=system_prompt
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 6480, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\models.py", line 4916, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1611, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1404, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Python314\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\_api_client.py", line 1381, in _request_once
+    errors.APIError.raise_for_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kelvi\AppData\Roaming\Python\Python314\site-packages\google\genai\errors.py", line 184, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-06-10 16:17:11,659 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:17:17,177 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:27,486 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:38,546 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:48,788 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:57,702 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:17:58,517 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/sendMessage "HTTP/1.1 200 OK"
+2026-06-10 16:17:58,536 - __main__ - INFO - User NextEdge Tech Studio (1134002054) started the bot
+2026-06-10 16:18:08,034 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:18:18,285 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:18:28,515 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:18:38,755 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:18:48,992 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:18:59,233 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:19:09,473 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:19:19,760 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:19:30,001 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:19:40,238 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:19:50,536 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:20:00,777 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:20:11,118 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:20:22,997 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:20:35,024 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:20:45,270 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:20:58,632 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:21:08,922 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:21:19,306 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:21:32,626 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:21:42,912 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:21:53,115 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:22:03,393 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:22:13,690 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:22:23,977 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:22:34,225 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:22:44,475 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:22:54,751 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:23:05,139 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:23:15,846 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:23:26,132 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:23:36,446 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:23:46,719 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:23:57,010 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:24:07,249 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:24:17,535 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:24:27,774 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:24:37,983 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:24:48,222 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:24:58,458 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:25:09,145 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:25:19,441 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:25:29,734 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:25:40,480 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:25:51,287 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:26:01,573 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:26:11,775 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:26:22,014 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:26:32,297 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:26:42,690 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:26:52,976 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:27:03,231 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:27:13,559 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:27:23,839 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:27:29,283 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot7745285157:AAG73jGyxuALkjiRKdH_Ontt82H_Jt9TAAc/getUpdates "HTTP/1.1 200 OK"
+2026-06-10 16:27:29,290 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-06-10 16:27:29,297 - telegram.ext.Application - INFO - Application.stop() complete
